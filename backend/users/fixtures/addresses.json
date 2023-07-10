@@ -1,0 +1,12 @@
+[
+    {
+        "model": "users.address",
+        "pk": 1,
+        "fields": {
+            "street_address": "Sample address",
+            "city": "Sample city",
+            "zip_code": "36000",
+            "user": 1
+        }
+    }
+]

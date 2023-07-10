@@ -1,0 +1,101 @@
+@import "../../styles/variables.scss";
+
+.content {
+  position: relative;
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 40px;
+
+  .title {
+    display: flex;
+    gap: 20px;
+    position: relative;
+
+    .sort {
+      h3 {
+        position: relative;
+        cursor: pointer;
+        color: $colorDarkOrange;
+        text-transform: uppercase;
+        text-decoration: underline;
+      }
+
+      ul {
+        z-index: 100;
+        overflow: hidden;
+        position: absolute;
+        left: 150px;
+        font-size: 18px;
+        background-color: $colorWhite;
+        box-shadow: 0px 5px 15px $colorText;
+        border-radius: 10px;
+        overflow: hidden;
+        padding: 10px 0;
+        width: 160px;
+        
+        & li {
+          padding: 12px 20px;
+          cursor: pointer;
+          &:hover {
+            background: $colorLightOrange;
+          }
+          &:active {
+            background-color: darken($colorLightOrange, 20%);
+          }
+
+          &.active{
+            color: $colorDarkOrange;
+          }
+        }
+      }
+    }
+  }
+
+  .search {
+    position: relative;
+    align-items: center;
+    display: flex;
+
+    input {
+      height: 42px;
+      background: $colorWhite;
+      border: 1px solid $colorOrange;
+      box-shadow: 0 1px 15px $colorLightOrange;
+      border-radius: 4px;
+      font-size: 18px;
+      line-height: 19px;
+      padding: 0 35px;
+      position: relative;
+      min-width: 15%;
+      cursor: text;
+      color: $colorText;
+      font-weight: 500;
+
+      &:hover,
+      &:focus {
+        box-shadow: 5px 5px $colorText;
+      }
+    }
+
+    & img {
+      width: 20px;
+      height: 20px;
+      position: absolute;
+      z-index: 100;
+
+      &.search {
+        left: 10px;
+      }
+
+      &.clear {
+        right: 10px;
+        cursor: pointer;
+
+        &:active {
+          transform: scale(1.1);
+        }
+      }
+    }
+  }
+}

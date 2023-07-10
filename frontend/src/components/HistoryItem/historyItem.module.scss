@@ -1,0 +1,151 @@
+@import "../../styles/variables.scss";
+
+.wrap {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border: 1px solid $colorLightOrange;
+  border-radius: 20px;
+  width: 100%;
+  padding: 5px 25px;
+  position: relative;
+
+  .info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    h4 {
+      opacity: 0.7;
+    }
+  }
+
+  .data {
+    position: absolute;
+    top: -15px;
+    left: 100px;
+    z-index: 2;
+    background-color: $colorWhite;
+    color: $colorOrange;
+    padding: 0 5px;
+  }
+
+  .items {
+    flex: 1 1;
+    display: flex;
+    justify-content: flex-end;
+    gap: 5px;
+    max-width: 40%;
+    max-height: 70px;
+    overflow: hidden;
+  }
+
+  .itemPic {
+    width: 100px;
+    height: 100px;
+    object-fit: contain;
+    object-position: center;
+    opacity: 1;
+    cursor: default;
+  }
+
+  .price {
+    max-width: 40%;
+    display: flex;
+    text-align: center;
+    justify-content: flex-start;
+    align-items: center;
+  }
+
+  .dropList {
+    cursor: pointer;
+  }
+}
+
+.openedInfo {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid $colorLightOrange;
+  border-radius: 20px;
+  width: 100%;
+  padding: 5px 25px;
+  position: relative;
+  gap: 20px;
+
+  .mainInfo {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    .info {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+
+      h4 {
+        opacity: 0.7;
+      }
+    }
+
+    .data {
+      position: absolute;
+      top: -15px;
+      left: 100px;
+      z-index: 2;
+      background-color: $colorWhite;
+      color: $colorOrange;
+      padding: 0 5px;
+    }
+    .dropList {
+      cursor: pointer;
+    }
+
+    .address {
+      display: flex;
+      flex-direction: column;
+      text-align: center;
+      flex: 1;
+      max-width: 40%;
+      h3 {
+        opacity: 0.7;
+      }
+    }
+  }
+
+  .moreInfo {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(35%, 1fr));
+    gap: 10px;
+    width: 100%;
+    margin-bottom: 15px;
+
+    .item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+      padding: 5px 10px;
+      border: 1px solid $colorLightOrange;
+      border-radius: 20px;
+
+      .title {
+        flex: 1;
+        text-align: center;
+        h3 {
+          opacity: 0.7;
+        }
+      }
+
+      img {
+        width: 100px;
+        height: 100px;
+        object-fit: contain;
+        object-position: center;
+      }
+
+      .amount {
+        font-size: 24px;
+      }
+    }
+  }
+}

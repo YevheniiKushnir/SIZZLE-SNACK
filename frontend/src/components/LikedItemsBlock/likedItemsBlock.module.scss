@@ -1,0 +1,13 @@
+@import "../../styles/variables.scss";
+
+.wrap {
+  margin-top: 40px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  justify-content: center;
+  grid-auto-rows: 400px;
+  gap: 20px;
+  align-items: center;
+  justify-items: center;
+  margin-bottom: 30px;
+}

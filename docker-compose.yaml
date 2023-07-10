@@ -1,0 +1,44 @@
+services:
+  frontend:
+    container_name: frontend
+    build:
+      context: frontend
+      target: development
+    command: npm start
+    ports:
+      - 3000:3000
+    stdin_open: true
+    volumes:
+      - ./frontend:/frontend
+      - /frontend/node_modules
+    restart: always
+    depends_on:
+      - backend
+
+  backend:
+    container_name: backend
+    build:
+      context: backend
+      target: development
+    command: python manage.py runserver 0.0.0.0:8000
+    volumes:
+      - ./backend:/backend
+    ports:
+      - 8000:8000
+    env_file:
+      - ./backend/.env.local
+    depends_on:
+      - postgres
+
+  postgres:
+    container_name: postgres_db
+    image: postgres
+    volumes:
+      - postgres-data:/var/lib/posgresql/data
+    environment:
+      - POSTGRES_DB=fastfood
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+
+volumes:
+  postgres-data:

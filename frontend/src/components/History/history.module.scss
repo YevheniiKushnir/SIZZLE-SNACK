@@ -1,0 +1,9 @@
+.wrap {
+  margin-top: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  max-height: 1000px;
+  padding: 10px;
+  overflow-y: scroll;
+}

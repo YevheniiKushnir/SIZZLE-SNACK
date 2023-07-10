@@ -1,0 +1,20 @@
+[
+    {
+        "model": "users.user",
+        "pk": 1,
+        "fields": {
+            "password": "pbkdf2_sha256$600000$q4HSe8IC95fZsFr6ELvDqi$P8lUF3brwVUa6CvodojUZxU4FNEDRCPsMimtDscxIzM=",
+            "last_login": "2023-04-24T10:23:15Z",
+            "is_superuser": true,
+            "email": "admin@admin.com",
+            "phone_number": "+380991355781",
+            "first_name": "",
+            "last_name": "",
+            "date_joined": "2023-04-23T14:37:48.377Z",
+            "is_active": true,
+            "is_staff": true,
+            "groups": [],
+            "user_permissions": []
+        }
+    }
+]

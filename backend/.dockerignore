@@ -1,0 +1,43 @@
+# .gcloudignore
+
+.gcloudignore
+
+# If you would like to upload your .git directory, .gitignore file, or files
+
+# from your .gitignore file, remove the corresponding line
+
+# below:
+
+.git
+.gitignore
+
+# Python pycache:
+
+**pycache**/
+
+# Ignore collected static and media files
+
+mediafiles/
+staticfiles/
+collectstatic/
+
+# Ignore the local DB
+
+db.sqlite3
+
+# Ignored by the build system
+
+/setup.cfg
+venv/
+
+# Ignore IDE files
+
+.idea/
+
+Endpoints.docx
+Pipfile
+Pipfile.lock
+
+app.yaml
+.gcloudignore
+

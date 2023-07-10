@@ -1,0 +1,218 @@
+@import "../../styles/variables.scss";
+@import "../../styles/mixin.scss";
+
+.header {
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  border-bottom: 1px solid $colorText;
+
+  .wrappLogo {
+    display: flex;
+    gap: 20px;
+
+    .logo {
+      display: flex;
+      width: $logoSize;
+      height: $logoSize;
+      object-fit: contain;
+      object-position: center;
+      border: 2px solid $colorText;
+      border-radius: 50%;
+      padding: 15px;
+      background-color: $colorOrange;
+      box-sizing: content-box;
+    }
+  }
+
+  .wrappTitle {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    & * {
+      cursor: pointer;
+    }
+
+    h1 {
+      font-weight: 900;
+      text-transform: uppercase;
+      position: relative;
+
+      &::before {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 1px;
+        border-bottom: 4px solid $colorOrange;
+        transform: scaleX(0);
+        transform-origin: right center;
+        transition: transform $transformTime ease;
+      }
+    }
+
+    &:hover *::before {
+      transform: scaleX(1);
+    }
+    &:active *::before {
+      border-color: darken($colorOrange, 20%);
+    }
+
+    h3 {
+      position: relative;
+      opacity: 0.7;
+      &::before {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 1px;
+        border-bottom: 3px solid $colorOrange;
+        transform: scaleX(0);
+        transform-origin: left center;
+        transition: transform $transformTime ease;
+      }
+    }
+  }
+
+  .avatar {
+    display: flex;
+    flex: 1;
+    justify-content: flex-end;
+    align-items: center;
+    margin-right: 30px;
+    gap: 15px;
+
+    img {
+      max-width: 30px;
+      width: 100%;
+      cursor: pointer;
+
+      &:hover {
+        transform: scale(1.1);
+      }
+    }
+
+    .history{
+      width: 35px;
+    }
+
+    .login {
+      margin-right: 30px;
+    }
+
+    .switch {
+      position: relative;
+      display: inline-block;
+      margin: 0 20px;
+
+      & > span {
+        position: absolute;
+        top: 14px;
+        pointer-events: none;
+        text-align: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        line-height: 50%;
+        font-size: 16px;
+        text-transform: uppercase;
+        text-shadow: 0 1px 0 rgba(0, 0, 0, 0.06);
+        width: 50%;
+      }
+
+      input.check-toggle-round-flat:checked ~ .off {
+        color: $colorOrange;
+      }
+
+      input.check-toggle-round-flat:checked ~ .on {
+        color: $colorText;
+      }
+
+      & > span.on {
+        left: 0;
+        padding-left: 2px;
+        color: $colorOrange;
+      }
+
+      & > span.off {
+        right: 0;
+        padding-right: 4px;
+        color: $colorText;
+      }
+
+      .check-toggle {
+        position: absolute;
+        visibility: hidden;
+      }
+      .check-toggle + label {
+        display: block;
+        position: relative;
+        cursor: pointer;
+        outline: none;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+      }
+
+      input.check-toggle-round-flat + label {
+        padding: 2px;
+        width: 97px;
+        height: 35px;
+        background-color: $colorOrange;
+        -webkit-border-radius: 60px;
+        -moz-border-radius: 60px;
+        -ms-border-radius: 60px;
+        -o-border-radius: 60px;
+        border-radius: 60px;
+      }
+      input.check-toggle-round-flat + label:before,
+      input.check-toggle-round-flat + label:after {
+        display: block;
+        position: absolute;
+        content: "";
+      }
+
+      input.check-toggle-round-flat + label:before {
+        top: 2px;
+        left: 2px;
+        bottom: 2px;
+        right: 2px;
+        background-color: $colorOrange;
+        -moz-border-radius: 60px;
+        -ms-border-radius: 60px;
+        -o-border-radius: 60px;
+        border-radius: 60px;
+      }
+      input.check-toggle-round-flat + label:after {
+        top: 4px;
+        left: 4px;
+        bottom: 4px;
+        width: 48px;
+        background-color: $colorText;
+        -webkit-border-radius: 52px;
+        -moz-border-radius: 52px;
+        -ms-border-radius: 52px;
+        -o-border-radius: 52px;
+        border-radius: 52px;
+        -webkit-transition: margin 0.2s;
+        -moz-transition: margin 0.2s;
+        -o-transition: margin 0.2s;
+        transition: margin 0.2s;
+      }
+      input.check-toggle-round-flat:checked + label:after {
+        margin-left: 40px;
+      }
+    }
+  }
+
+  .cart {
+    @include button;
+  }
+}

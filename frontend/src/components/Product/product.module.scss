@@ -1,0 +1,115 @@
+@import "../../styles/variables.scss";
+
+.wrapp {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 20px 10px;
+  width: 100%;
+  max-width: 230px;
+  border: 3px solid $colorLightOrange;
+  border-radius: 20px;
+  position: relative;
+  height: 100%;
+  text-align: center;
+
+  &:hover {
+    border: 3px solid $colorDarkOrange;
+    box-shadow: 5px 5px $colorText;
+  }
+
+  .like {
+    display: flex;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 35px;
+    height: 35px;
+    cursor: pointer;
+
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
+
+  img {
+    object-fit: contain;
+    object-position: center;
+    cursor: pointer;
+    height: 100%;
+    max-height: 180px;
+    width: 85%;
+  }
+
+  h3 {
+    margin-bottom: 20px;
+  }
+
+  h5 {
+    opacity: 0.7;
+    font-size: 14px;
+    flex: 1;
+    max-height: 200px;
+    width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .addBlock {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+
+    h3 {
+      margin: 0;
+      width: 100%;
+      text-align: center;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .add {
+      background-color: $colorOrange;
+      width: 130px;
+      font-size: 20px;
+      display: flex;
+      text-align: center;
+      justify-content: center;
+      align-items: center;
+      padding: 10px;
+      font-weight: 700;
+      cursor: pointer;
+      border-radius: 20px;
+      border: 1px solid $colorLightOrange;
+      color: $colorText;
+      position: relative;
+
+      &:hover {
+        box-shadow: 5px 5px $colorText;
+      }
+
+      &:active {
+        background-color: darken($colorOrange, 20%);
+      }
+
+      .counter {
+        position: absolute;
+        display: flex;
+        text-align: center;
+        justify-content: center;
+        align-items: center;
+        bottom: -15px;
+        right: -5px;
+        background-color: $colorOrange;
+        border: 1px solid $colorLightOrange;
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+      }
+    }
+  }
+}

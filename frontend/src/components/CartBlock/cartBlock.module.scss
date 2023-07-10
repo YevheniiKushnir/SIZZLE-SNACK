@@ -1,0 +1,144 @@
+@import "../../styles/variables.scss";
+
+.wrapPage {
+  padding: 20px 0;
+  flex: 1;
+  
+  .contentWrap {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    min-height: 60vh;
+
+    .title {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      h1 {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        img {
+          width: 30px;
+        }
+      }
+
+      h3 {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+
+        opacity: 0.5;
+        cursor: pointer;
+
+        img {
+          cursor: pointer;
+        }
+
+        &:hover {
+          opacity: 1;
+          gap: 0;
+        }
+      }
+    }
+
+    .wrap {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      flex: 1;
+    }
+
+    .result {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 20px;
+      font-weight: 500;
+
+      b {
+        color: $colorDarkOrange;
+      }
+    }
+
+    .btnBlock {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      button {
+        background-color: $colorOrange;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-width: 220px;
+        height: 50px;
+        border-radius: 20px;
+        border: 1px solid $colorLightOrange;
+        color: $colorText;
+        font-weight: 900;
+        gap: 10px;
+        padding: 0 20px;
+        cursor: pointer;
+        font-size: 18px;
+
+        &:first-child {
+          opacity: 0.5;
+          &:hover {
+            opacity: 1;
+          }
+        }
+        & * {
+          cursor: pointer;
+        }
+
+        &:hover {
+          box-shadow: 5px 5px $colorText;
+          p {
+            &::after {
+              height: 100%;
+            }
+          }
+        }
+
+        &:active {
+          background-color: darken($colorOrange, 20%);
+        }
+      }
+    }
+  }
+
+  .emptyBlock {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 80px;
+    height: 100%;
+    width: 100%;
+    padding: 40px;
+    text-align: center;
+
+
+    .linkBlock {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 30%;
+
+      img {
+        display: flex;
+        align-items: center;
+        width: 100%;
+        cursor: pointer;
+        margin-bottom: 20px;
+        min-width: 250px;
+      }
+
+      h3 {
+        cursor: pointer;
+      }
+    }
+  }
+}

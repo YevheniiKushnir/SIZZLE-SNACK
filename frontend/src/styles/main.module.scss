@@ -1,0 +1,49 @@
+@import "./variables.scss";
+
+.mainWrapp {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+
+  .wrapper {
+    margin: 50px;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    background-color: $colorWhite;
+    border: 1px solid $colorText;
+    padding: 20px 40px 40px 40px;
+    box-shadow: 0px 10px 20px $colorOrange;
+    border-radius: 20px;
+    max-width: 1080px;
+    min-height: 80vh;
+  }
+}
+
+* {
+  box-sizing: border-box;
+  outline: none;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  text-transform: none;
+  text-decoration: none;
+  transition: all $transformTime ease;
+  color: $colorText;
+}
+
+h1, h2, h3, h4, h5, h6, p {
+  cursor: default;
+}
+
+body {
+  background-color: $colorLightOrange;
+  font-style: normal;
+  font-family: "Oswald", sans-serif;
+  color: $colorText;
+  font-weight: 700;
+}
+
+

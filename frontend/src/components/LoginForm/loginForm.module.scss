@@ -1,0 +1,346 @@
+@import "../../styles/variables.scss";
+@import "../../styles/mixin.scss";
+
+.wrap {
+  @include wrapOpenedEl;
+
+  .alert {
+    position: fixed;
+    top: 2vh;
+    left: 50%;
+    transform: translateX(-50%);
+    width: auto;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-color: $colorOrange;
+    border: 1px solid $colorText;
+    border-radius: 20px;
+    max-height: 150px;
+    padding: 10px;
+    gap: 60px;
+    z-index: 9999;
+    transform: translateY(-50%, -50%);
+    animation: slideIn 0.3s forwards;
+
+    img {
+      max-width: 90px;
+    }
+    p {
+      font-size: 28px;
+    }
+  }
+
+  .contentWrapper {
+    width: 35%;
+    height: auto;
+    z-index: 130;
+    position: relative;
+    display: flex;
+    min-height: 40vh;
+
+    .content {
+      display: flex;
+      background-color: $colorWhite;
+      border: 1px solid $colorLightOrange;
+      box-shadow: 0 0 10px $colorText;
+      border-radius: $borderRadiusLoginForm;
+      overflow: hidden;
+      width: 100%;
+      height: 100%;
+
+      form {
+        width: 100%;
+        display: flex;
+        height: 100%;
+        overflow: hidden;
+        font-size: 18px;
+
+        .contentBlock {
+          display: flex;
+          flex-direction: column;
+          gap: 20px;
+          background-color: $colorDarkOrange;
+          padding: 20px;
+          overflow: hidden;
+          position: relative;
+          cursor: pointer;
+          font-style: inherit;
+
+          * {
+            cursor: inherit;
+          }
+
+          &:hover {
+            background-color: darken($colorDarkOrange, 15%);
+          }
+
+          h1 {
+            transform: rotate(-90deg);
+            position: relative;
+            left: 0;
+            top: 50%;
+          }
+
+          label {
+            display: none;
+            flex-direction: column;
+            gap: 10px;
+            font-size: inherit;
+
+            input {
+              width: 80%;
+              font-size: inherit;
+              cursor: pointer;
+            }
+
+            label {
+              align-self: center;
+              display: flex;
+              flex-direction: row;
+              align-items: center;
+
+              input {
+                width: unset;
+              }
+            }
+          }
+
+          button {
+            display: none;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            min-width: auto;
+            padding: 10px;
+            width: auto;
+            background-color: $colorOrange;
+            cursor: pointer;
+            font-size: inherit;
+            border: 1px solid $colorWhite;
+            font-weight: 700;
+
+            &:hover {
+              box-shadow: 0 0 5px $colorText;
+              background-color: darken($colorOrange, 5%);
+            }
+
+            &:active {
+              background-color: $colorDarkOrange;
+            }
+          }
+        }
+
+        .registration {
+          flex: 1 1;
+          border-top-left-radius: $borderRadiusLoginForm;
+          border-bottom-left-radius: $borderRadiusLoginForm;
+        }
+
+        .authorization {
+          width: 20%;
+          border-top-right-radius: $borderRadiusLoginForm;
+          border-bottom-right-radius: $borderRadiusLoginForm;
+
+          h1 {
+            top: 60%;
+          }
+        }
+
+        .active {
+          width: 80%;
+          background-color: $colorLightOrange;
+          cursor: unset;
+
+          & h1 {
+            position: unset;
+            transform: none;
+            transition: none;
+          }
+
+          & label {
+            display: flex;
+          }
+
+          &:hover {
+            background-color: $colorLightOrange;
+          }
+
+          & button {
+            display: flex;
+          }
+        }
+      }
+
+      .userInfo {
+        display: flex;
+        flex-direction: column;
+        padding: 20px;
+        gap: 20px;
+        background-color: $colorLightOrange;
+
+        h1 {
+          display: flex;
+          gap: 10px;
+          input {
+            font-size: inherit;
+            width: auto;
+            max-width: 35%;
+          }
+        }
+
+        hr {
+          border: 1px solid $colorText;
+        }
+
+        label {
+          display: flex;
+          gap: 20px;
+          align-items: center;
+          font-size: 24px;
+          input {
+            font-size: inherit;
+            display: flex;
+            width: auto;
+            max-width: 35%;
+          }
+        }
+
+        .addressBlock {
+          display: flex;
+          flex-direction: column;
+          gap: 20px;
+          height: 200px;
+          overflow-y: scroll;
+          border-top: 2px solid $colorText;
+          padding: 10px;
+
+          .address {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 20px;
+            width: 100%;
+            position: relative;
+            border: 1px solid $colorDarkOrange;
+            padding: 10px 25px;
+            background-color: $colorWhite;
+            border-radius: 20px;
+            box-shadow: 0 0 5px $colorText;
+            input {
+              width: auto;
+              max-width: 50%;
+            }
+
+            .header {
+              display: flex;
+              justify-content: space-between;
+              width: 100%;
+
+              div {
+                display: flex;
+                align-items: center;
+                gap: 10px;
+
+                opacity: 0.5;
+                cursor: pointer;
+
+                img {
+                  cursor: pointer;
+                }
+
+                &:hover {
+                  opacity: 1;
+                  gap: 0;
+                }
+              }
+            }
+
+            .inputs {
+              display: inline-flex;
+              flex-direction: column;
+              gap: 20px;
+              position: relative;
+              width: 100%;
+
+              .wrapInputs {
+                display: inline-flex;
+                gap: 20px;
+
+                .zip {
+                  max-width: 20%;
+                  width: auto;
+                }
+
+                input {
+                  width: auto;
+                  max-width: 35%;
+                }
+              }
+            }
+          }
+          .addAddressBtn {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            min-width: auto;
+            padding: 10px;
+            width: auto;
+            background-color: $colorOrange;
+            cursor: pointer;
+            font-size: inherit;
+            border: 1px solid $colorWhite;
+            font-weight: 700;
+
+            &:hover {
+              box-shadow: 0 0 5px $colorText;
+              background-color: darken($colorOrange, 5%);
+            }
+
+            &:active {
+              background-color: $colorDarkOrange;
+            }
+          }
+        }
+
+        .btnBlock {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          width: 100%;
+
+          button {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            min-width: auto;
+            padding: 10px;
+            width: auto;
+            background-color: $colorOrange;
+            cursor: pointer;
+            font-size: inherit;
+            border: 1px solid $colorWhite;
+            font-weight: 700;
+
+            &:hover {
+              box-shadow: 0 0 5px $colorText;
+              background-color: darken($colorOrange, 5%);
+            }
+
+            &:active {
+              background-color: $colorDarkOrange;
+            }
+          }
+        }
+      }
+    }
+
+    .close {
+      @include closeImg;
+    }
+  }
+}

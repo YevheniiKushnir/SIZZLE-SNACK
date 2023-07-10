@@ -1,0 +1,122 @@
+@import "../../styles/variables.scss";
+@import "../../styles/mixin.scss";
+
+.wrappOpened {
+  @include wrapOpenedEl;
+
+  .content {
+    display: flex;
+    width: calc(100vw - 100px);
+    max-width: 720px;
+    height: 600px;
+    background-color: $colorWhite;
+    border-radius: 20px;
+    opacity: 1;
+    z-index: 300;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: 0px 5px 15px $colorText;
+    padding: 20px;
+
+    .close {
+      @include closeImg;
+    }
+
+    img {
+      width: 300px;
+      object-fit: contain;
+      padding: 10px;
+    }
+
+    .info {
+      background-color: darken($colorWhite, 5%);
+      border-radius: 20px;
+      border: 1px solid $colorLightOrange;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-between;
+      height: 100%;
+      max-width: 400px;
+      padding: 20px;
+
+      .mainProperties {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        gap: 40px;
+      }
+
+      .anotherProperties {
+        display: flex;
+        flex-direction: column;
+        font-size: 20px;
+        width: 100%;
+        border-radius: 20px;
+        background-color: $colorWhite;
+        border: 1px solid $colorLightOrange;
+
+        p {
+          display: block;
+          align-self: center;
+          padding: 10px;
+        }
+
+        ul {
+          display: grid;
+          grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+          justify-content: center;
+          border: 1px solid $colorLightOrange;
+          border-radius: 20px;
+
+          li {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 40px;
+            cursor: pointer;
+
+            &:hover {
+              background-color: $colorOrange;
+              border-radius: 20px;
+              border-color: $colorLightOrange;
+            }
+
+            &:active {
+              background-color: darken($colorOrange, 20%);
+            }
+
+            &.active {
+              background-color: $colorOrange;
+              border-radius: 20px;
+              border-color: $colorLightOrange;
+              box-shadow: 1px 1px 1px 1px $colorText;
+            }
+          }
+        }
+      }
+      .buy {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+
+        .add {
+          @include button;
+        }
+
+        button {
+          border: none;
+          &.add {
+            width: 100%;
+            min-width: 300px;
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,42 @@
+@import "../../styles/variables.scss";
+@import "../../styles/mixin.scss";
+
+.wrapp {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  h1 {
+    text-align: center;
+  }
+
+  img {
+    width: 20%;
+    height: 30%;
+    object-fit: contain;
+    object-position: center;
+  }
+
+  .error {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    width: 90%;
+    img {
+      width: 40%;
+    }
+
+    .goBack {
+      @include button;
+
+      min-width: 350px;
+      height: 80px;
+
+      p::before {
+        content: "\25C0";
+      }
+    }
+  }
+}
